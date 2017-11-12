@@ -5,9 +5,9 @@ package com.github.zxj5470.ktnl
  * @date: 17-11-7
  */
 
-import com.github.zxj5470.ktnl.util.*
-import com.github.zxj5470.ktnl.core.*
-import java.io.File
+import com.github.zxj5470.ktnl.core.parse
+import com.github.zxj5470.ktnl.util.FileUtil
+import com.github.zxj5470.ktnl.util.handleArgs
 
 fun main(args: Array<String>) {
     val args1=handleArgs(args)
@@ -18,16 +18,6 @@ fun main(args: Array<String>) {
         val ktnlFileContent = fileUtil.readText()
         parse(ktnlFileContent)
     }
-
-
-//    val s=Stack<Char>()
-//    for(i in 65..100)s.push(i.toChar())
-//    println(s.size)
-//    s.forEach { println(it) }
-    
 }
 
-class FileUtil(fileName: String) {
-    var file:File?= File(fileName)
-    fun readText()=file!!.readText()
-}
+
