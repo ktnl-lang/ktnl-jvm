@@ -33,42 +33,57 @@ fun parse(content: String) {
             }
             it.isWord -> {
                 sb.append(it)
-                if (currentStr == StringConstants.DEFINE) {
-                    println("find $currentStr")
-                    sb.removeAll()
-                    statusStack.push(Status.DEFINING)
-                }
-                if (currentStr == StringConstants.SET) {
-                    println("find $currentStr")
-                    sb.removeAll()
-                    statusStack.push(Status.SETTING)
+                when (currentStr) {
+                    StringConstants.DEFINE -> {
+                        println("find $currentStr")
+                        sb.removeAll()
+                        statusStack.push(Status.DEFINING)
+                    }
+                    StringConstants.SET -> {
+                        println("find $currentStr")
+                        sb.removeAll()
+                        statusStack.push(Status.SETTING)
+                    }
                 }
             }
 
-//            it.isQuote -> {
-//                if (statusStack.peek() != Status.QUOTING) {
-//                    statusStack.push(Status.QUOTING)
-//                } else {
-//                    statusStack.pop()
-//                }
-//                sb.append(it)
-//            }
+            it.isNumeric -> {
+                when (currentStatus) {
+                    Status.QUOTING, Status.DEFINING, Status.SETTING -> {
+                        sb.append(it)
+                    }
+                    Status.LAMBDA_ING -> {
+
+                    }
+                    Status.FUNCTION_ING -> {
+
+                    }
+                    else -> {
+                    }
+                }
+            }
+        // find " to parse to a string
+            it.isQuote -> {
+                if (statusStack.peek() != Status.QUOTING) {
+                    statusStack.push(Status.QUOTING)
+                } else {
+                    currentStr.isString = true
+                    statusStack.pop()
+                }
+            }
 
             it.isSpace -> {
-                if (!sb.isEmpty() || currentStatus == Status.DEFINING || currentStatus == Status.SETTING)
+                if (sb.isNotEmpty() || currentStatus == Status.DEFINING || currentStatus == Status.SETTING)
                     nameList.add(currentStr)
                 sb.removeAll()
             }
 
-            it.isNumeric -> {
-                if (currentStatus == Status.DEFINING || currentStatus == Status.SETTING)
-                    sb.append(it)
-            }
 
             it.isRightBracket -> {
                 if (charStack.isNotEmpty() && charStack.peek()!!.isLeftBracket) {
                     println("match Bracket.")
                     charStack.pop()//pop the `)`
+
                     if (statusStack.peek() == Status.DEFINING) {
                         statusStack.pop()
                     }
@@ -80,13 +95,14 @@ fun parse(content: String) {
                     }
                     val ktnlObjType =
                             when {
-                                currentStr.canBeDouble()->"Double"
-                                currentStr.canBeInt()->"Int"
-                                currentStr.canBeLong()->"Long"
-                                currentStr.canBeBigDecimal()->"BigDecimal"
-                                else->"String"
+                                currentStr.isString -> "String"
+                                currentStr.canBeDouble() -> "Double"
+                                currentStr.canBeInt() -> "Int"
+                                currentStr.canBeLong() -> "Long"
+                                currentStr.canBeBigDecimal() -> "BigDecimal"
+                                else -> "String"
                             }
-                    varsMap[nameList.last] = KtnlObject(ktnlObjType,currentStr)
+                    varsMap[nameList.last] = KtnlObject(ktnlObjType, currentStr)
                 }
                 sb.removeAll()
             }

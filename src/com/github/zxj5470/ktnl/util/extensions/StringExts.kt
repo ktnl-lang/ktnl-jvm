@@ -60,13 +60,22 @@ fun String.countTimes(regex: Char): Int {
     return count
 }
 
-fun String.isNumeric():Boolean{
-    for(i in this){
-        if(!i.isNumeric)return false
+fun String.isNumeric(): Boolean {
+    for (i in this) {
+        if (!i.isNumeric) return false
     }
     return true
 }
+
 /**
  * StringBuilder extension functions
  */
-fun StringBuilder.removeAll()= this.setLength(0)
+fun StringBuilder.removeAll() = this.setLength(0)
+
+var stringBuilderIsString = false
+
+var String.isString: Boolean
+    get() = stringBuilderIsString
+    set(value) {
+        stringBuilderIsString = value
+    }

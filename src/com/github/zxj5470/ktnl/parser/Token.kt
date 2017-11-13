@@ -22,6 +22,6 @@ enum class Status(val status: Int = 0xbabe) {
     DEFINING,
     QUOTING,
     SETTING,
-    LAMBDAING,
-    FUNCTING
+    LAMBDA_ING,
+    FUNCTION_ING
 }
