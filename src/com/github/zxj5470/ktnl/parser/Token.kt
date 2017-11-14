@@ -15,7 +15,9 @@ enum class Token(val token: Int= 0xcafe) {
     DEFINE,
     NUMBER,
     LAMBDA,
-    FUNCTION
+    FUNCTION,
+    IF,
+    LOOP
 }
 
 enum class Status(val status: Int = 0xbabe) {
@@ -23,5 +25,7 @@ enum class Status(val status: Int = 0xbabe) {
     QUOTING,
     SETTING,
     LAMBDA_ING,
-    FUNCTION_ING
+    FUNCTION_ING,
+    IF_ING,
+    LOOPING
 }
