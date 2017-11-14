@@ -19,5 +19,3 @@ fun main(args: Array<String>) {
         parse(ktnlFileContent)
     }
 }
-
-
