@@ -2,7 +2,7 @@ package com.github.zxj5470.ktnl.util.extensions
 
 
 /**
- * @from: Kotlinx(wechat)
+ * @from: Kotlinx WeChat
  * @author: BennyHuo??? , 今天三块钱??? , ice1000???
  * @update: 17-11-7
  *
@@ -27,4 +27,4 @@ class ThreeYuan(val value: Boolean){
 infix fun ThreeYuan.`!`(valueForFalse: Any) = if(value) elseValue else valueForFalse
 infix fun ThreeYuan.`!`(elseBlock: ()->Any) = if(value) ifBlock() else elseBlock()
 
-operator infix fun Char.invoke(block:()->Any)=block()
+//operator infix fun Char.invoke(block:()->Any)=block()
