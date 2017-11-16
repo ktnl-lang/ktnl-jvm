@@ -102,7 +102,7 @@ fun parse(content: String) {
                                 currentStr.canBeBigDecimal() -> "BigDecimal"
                                 else -> "String"
                             }
-                    varsMap[nameList.last] = KtnlObject(ktnlObjType, currentStr)
+                    varsMap[nameList.last] = KtnlObject(nameList.last, currentStr,ktnlObjType)
                 }
                 sb.removeAll()
             }
