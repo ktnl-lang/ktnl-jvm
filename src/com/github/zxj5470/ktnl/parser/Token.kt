@@ -6,26 +6,16 @@ package com.github.zxj5470.ktnl.parser
  * 0xcafe
  * 0xbabe
  * to salute Java
- *
+ * (val token: Int= 0xcafe)
  * @author: zxj5470
  * @date: 2017/11/7
  */
 
-enum class Token(val token: Int= 0xcafe) {
+enum class Token {
     DEFINE,
     NUMBER,
     LAMBDA,
     FUNCTION,
     IF,
     LOOP
-}
-
-enum class Status(val status: Int = 0xbabe) {
-    DEFINING,
-    QUOTING,
-    SETTING,
-    LAMBDA_ING,
-    FUNCTION_ING,
-    IF_ING,
-    LOOPING
 }

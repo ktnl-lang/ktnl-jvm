@@ -1,10 +1,9 @@
-package com.github.zxj5470.ktnl.parser
-
-import com.github.zxj5470.ktnl.util.extensions.countTimes
+package com.github.zxj5470.ktnl.util.extensions
 
 /**
  * @author: zxj5470
  * @date: 2017/11/7
+ * @update: 2017/11/17
  */
 
 val INT_MAX_STRING by lazy {
