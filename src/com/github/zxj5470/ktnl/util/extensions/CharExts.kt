@@ -3,8 +3,8 @@ package com.github.zxj5470.ktnl.util.extensions
 import com.github.zxj5470.ktnl.constants.*
 
 /**
- * @author: zxj5470
- * @date: 17-11-7
+ * @author zxj5470
+ * @date 17-11-7
  */
 /**
  * Char extensions for asserting something.

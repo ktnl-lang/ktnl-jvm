@@ -1,8 +1,8 @@
 package com.github.zxj5470.ktnl.util
 
 /**
- * @author: zxj5470
- * @date: 2017/11/7
+ * @author zxj5470
+ * @date 2017/11/7
  */
 object Echoer {
     enum class ForeheadColor(val value: Int=31) {

@@ -1,8 +1,8 @@
 package com.github.zxj5470.ktnl.util.extensions
 
 /**
- * @author: zxj5470
- * @date: 2017/11/7
+ * @author zxj5470
+ * @date 2017/11/7
  */
 
 inline val <T> Collection<T>.last

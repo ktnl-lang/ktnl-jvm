@@ -1,8 +1,8 @@
 package com.github.zxj5470.ktnl.util
 
 /**
- * @author: zxj5470
- * @date: 17-11-5
+ * @author zxj5470
+ * @date 17-11-5
  */
 
 fun handleArgs(arg:Array<String>):Array<String> =

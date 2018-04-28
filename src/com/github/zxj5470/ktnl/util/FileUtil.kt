@@ -1,8 +1,8 @@
 package com.github.zxj5470.ktnl.util
 
 /**
- * @author: zxj5470
- * @date: 2017/11/12
+ * @author zxj5470
+ * @date 2017/11/12
  */
 import java.io.File
 

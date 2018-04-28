@@ -3,10 +3,10 @@ package com.github.zxj5470.ktnl.util.extensions
 
 /**
  * @from: Kotlinx WeChat
- * @author: BennyHuo??? , 今天三块钱??? , ice1000???
+ * @author BennyHuo??? , 今天三块钱??? , ice1000???
  * @update: 17-11-7
  *
- * @author: zxj5470
+ * @author zxj5470
  * @update: 17-11-17
  */
 

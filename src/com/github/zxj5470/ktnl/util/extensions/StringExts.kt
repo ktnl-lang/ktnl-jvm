@@ -2,8 +2,8 @@ package com.github.zxj5470.ktnl.util.extensions
 
 /**
  * personal Copy Right!!!!
- * @author: zxj5470
- * @date: 2017/11/8
+ * @author zxj5470
+ * @date 2017/11/8
  * @from: https://github.com/zxj5470/KotlinExt/blob/master/android-kotlin-ext/src/main/java/com/github/zxj5470/android_kotlin_ext/str/StringExt.kt
  */
 

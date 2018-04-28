@@ -8,7 +8,7 @@ import com.github.zxj5470.ktnl.util.extensions.*
  * but you can try `!`
  *
  *
- * @date: 2017/11/17
+ * @date 2017/11/17
  */
 fun main(args: Array<String>) {
     var s=(1<2) `?` 123 `!` 233
